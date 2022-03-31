@@ -10,13 +10,23 @@
   <script type="text/babel">
     const root = document.getElementById("root");
 
-    const Container = () => (
-      <div>
-        <h3>Total clicks: 0</h3>
-
-        <button>Click me</button>
-      </div>
-    );
-    ReactDOM.render(<Container />, root);
+    function App() {
+      const [minutes, setMinutes] = React.useState();
+      return (
+        <div>
+          <h1 className="hi">Super Converter</h1>
+          <label htmlFor="minutes">Minutes</label>
+          <input
+            value={minutes}
+            id="minutes"
+            placeholder="Minutes"
+            type="number"
+          />
+          <label htmlFor="hours">Hours</label>
+          <input id="hours" placeholder="Hours" type="number" />
+        </div>
+      );
+    }
+    ReactDOM.render(<App />, root);
   </script>
 </html>
